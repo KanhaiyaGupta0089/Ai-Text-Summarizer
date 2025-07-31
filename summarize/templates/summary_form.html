@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block title %} Summarization page {% endblock %}
+{% block content %}
+<form class='m-2' method="post" action="{% url 'summary' %}">
+  <h1 class='text-xl font-bold text-blue-700'>Summarize Your Text 📢📢</h1>
+  {% csrf_token %}
+  <label for="text"><i>Enter Text for Summarization:</i></label><br />
+  <textarea class='border outline-none focus:ring rounded w-full p-2' id="text" name="text" rows="10" cols="50" placeholder="Text to Summarize..."></textarea><br /><br />
+  <button class='btn' type="submit">Summarize</button>
+</form>
+{% endblock %}
